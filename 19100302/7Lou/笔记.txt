@@ -1,0 +1,6 @@
+1.切换目录命令：cd ，如 shiningdeAir:hello-world shining$ cd /Users/shining/Documents/GitHub/selfteaching-python-camp/19100302/7Lou/
+                     shiningdeAir:7Lou shining$ 
+2.创建文件命令：touch ，如 shiningdeAir:7Lou shining$ touch 笔记.txt
+
+3.网页上把所需仓库Fork到自己账户>>> 通过GitHub Desktop把仓库克隆(clone)>>>本地电脑;
+  本地电脑编辑文件>>>通过GitHub Desktop提交commit>>>通过GitHub Desktop变更推送(push)>>>自己账户仓库>>>向master分支发起Pull Request
