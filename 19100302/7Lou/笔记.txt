@@ -4,3 +4,5 @@
 
 3.网页上把所需仓库Fork到自己账户>>> 通过GitHub Desktop把仓库克隆(clone)>>>本地电脑;
   本地电脑编辑文件>>>通过GitHub Desktop提交commit>>>通过GitHub Desktop变更推送(push)>>>自己账户仓库>>>向master分支发起Pull Request
+  
+4.直接在终端里输入Jupyter Notebook，Jupyter Lab启动Jupyter Notebook，Jupyter Lab。
