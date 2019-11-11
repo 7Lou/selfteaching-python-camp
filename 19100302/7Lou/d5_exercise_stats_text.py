@@ -21,15 +21,18 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 '''
+import string
+#替换掉标点符号
+for i in text:
+    if i in string.punctuation:  #如果字符是标点符号的话就将其替换为无
+        text = text.replace(i,"")
 
-text=text.replace("*","").replace(".","").replace("-","").replace("'","").replace("!","")#必须用双引号
 text=text.split()
 d={}
 for i in text:
-    if i in d:
-        d[i]+=1
-    else:
+    if i not in d:
         d[i]=1
-
+    else:
+        d[i]+=1
 print(sorted(d.items(),key=lambda x:x[1],reverse=True))
 
