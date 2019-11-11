@@ -12,10 +12,10 @@ i = 1
 while i < 10:
     if i % 2 == 0:
         i += 1
-        continue
+        #continue
     j = 1
     while j < i+1:
-        print(i,"*",j,"=",i*j," ",end="")
+        print(i,"*",j,"=",i*j,end='    ')
         j += 1
-    print("",end="\n")
+    print()
     i += 1
