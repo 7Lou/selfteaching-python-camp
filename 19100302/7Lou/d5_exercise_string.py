@@ -21,8 +21,8 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 '''
 text=text.replace('better','worse')
-text=text.split()#转换为列表
 
+text=text.split()#转换为列表
 l=[]
 for i in text:#遍历列表
         if 'ea' not in i: 
@@ -30,7 +30,7 @@ for i in text:#遍历列表
 text=" ".join(l)#将列表转换为字符串
 text=text.swapcase()#翻转大小写字母
 text=text.split()#转换为列表
-#print(sorted(text)) sort只用于列表；sorted可用于所有可迭代对象。
+#print(sorted(text)) #sort只用于列表；sorted可用于所有可迭代对象。
 text.sort()
 print(text)
 
