@@ -3,7 +3,6 @@ list1.reverse()#翻转列表
 #拼接字符串
 list2=[str(x) for x in list1]#将列表中每个元素转换为字符串
 a=''.join(list2)
-
 b=a[3:9]
 d=b[::-1]
 e=int(d)
