@@ -19,36 +19,28 @@ Although never is often better than *right* now.
 If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!'''
-import re
 
-#统计参数中每个英文单词出现的次数，按词频降序排列数组
 def stats_text_en(text):
     """统计参数中每个英文单词出现的次数，按词频降序排列数组。"""
-
-    text = re.sub(r'[\u4e00-\u9fa5]','',text) #替换掉中文字符
-    text = re.sub(r'[^\w\s]','',text) #替换掉标调符号
-    d = {}
-    for x in text.split():
-        if x not in d:
-            d[x] =1
-        else:
-            d[x]+=1
+    #通过unicode非英文字母编码范围判定非英文
+    for x in text:
+        if '\u005a'<x<'\u0061' or x<'\u0041' or x>'\u007a':
+            text=text.replace(x," ")
+        d={}
+        for x in text.split():
+            if x not in d:
+                d[x] =1
+            else:
+                d[x]+=1
     return sorted(d.items(), key=lambda x: x[1],reverse=True)
+        
 
-
-#统计参数中每个汉字出现的次数，按字频降序排列数组
 def stats_text_cn(text):
     """统计参数中每个汉字出现的次数，按字频降序排列数组"""
-    
-    text = re.sub("[A-Za-z]", '', text)
-    text = re.sub(r'[^\w\s]','',text)
-    d = {}
+    d={}
     for x in text:
-        if u'\u4e00' <= x <= u'\u9fff' :
+        if '\u4e00'<=x<='\u9fa5':#通过unicode中文编码范围判定中文
             d[x] = text.count(x)
-    
-    return sorted(d.items(), key=lambda x: x[1], reverse=True) #按出现数字从大到小排列
+    return sorted(d.items(), key=lambda x: x[1], reverse=True)
 
-print(stats_text_en(text))
-print(dict(stats_text_cn(text)))
-
+print(stats_text_cn(text),stats_text_en(text))
