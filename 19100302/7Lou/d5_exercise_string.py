@@ -30,6 +30,7 @@ for i in text:#遍历列表
 text=" ".join(l)#将列表转换为字符串
 text=text.swapcase()#翻转大小写字母
 text=text.split()#转换为列表
+print(sorted(text))
 #print(sorted(text)) #sort只用于列表；sorted可用于所有可迭代对象。
 text.sort()
 print(text)
